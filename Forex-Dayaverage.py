@@ -29,7 +29,9 @@ for index, row in df.iterrows():
             old_row = row
             n = 1
             sum_row = 0
+
 avr_df = pd.DataFrame(avr_df)
+
 import matplotlib.pyplot as plt
 avr_df.plot(title='Average Per Day')
 # plt.scatter([x for x in range(0, len(avr_df))], avr_df)
