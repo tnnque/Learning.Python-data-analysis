@@ -19,7 +19,6 @@ def plotline(theta0, theta1, X, y):
     plt.axis([-10, 10, 0, 200])
     plt.show()
 
-
 def derivatives(theta0, theta1, X, y):
     dtheta0 = 0
     dtheta1 = 0
