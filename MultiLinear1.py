@@ -75,4 +75,12 @@ def extract(path, col_names):
 def hypothesis(X, B):
     return X.dot(B)
 
+def derivatives(B, X, Y):
+    B_temp = np.zeros(len(X))
+    for Xi, Bi in range(len(X)):
+        for xi, yi in zip(Xi,Y):
+            Bi += (hypothesis(xi, B_temp) - yi) * xi
+
+        B = B.append(Bi)
+
 extract(path, col_names)
