@@ -3,7 +3,6 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from pandas import DataFrame
 
-#Data
 path = '/Users/tnnque/PycharmProjects/data-analytics-ex/que/train_small_cleaned.csv'
 col_name = input("Enter variable:")
 
