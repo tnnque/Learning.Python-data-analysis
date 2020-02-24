@@ -1,6 +1,5 @@
 # import sys
 import numpy as np
-import pandas as pd
 
 filename = '/Users/tnnque/PycharmProjects/Python-data-analysis/Machine-learning/data_multivar.txt'
 X = []
