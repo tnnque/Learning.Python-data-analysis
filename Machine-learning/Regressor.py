@@ -1,7 +1,7 @@
 # import sys
 import numpy as np
 
-filename = '/Users/tnnque/PycharmProjects/Python-data-analysis/Machine-learning/data_multivar.txt'
+filename = 'data_multivar_1.txt'
 X = []
 y = []
 with open(filename, 'r') as f:
