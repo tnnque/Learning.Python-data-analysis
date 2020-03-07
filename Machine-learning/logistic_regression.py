@@ -32,4 +32,4 @@ def plot_classifier(classifier, X, y):
     plt.xticks((np.arange(int(min(X[:, 1]) - 1), int(max(X[:, 1]) + 1), 1.0)))
     plt.show()
 
-plot_classifier(classifier, X, y)
+# plot_classifier(classifier, X, y)
