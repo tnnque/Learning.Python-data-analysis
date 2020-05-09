@@ -1,13 +1,9 @@
 import numpy as np
-import pandas as pd
-from pandas import DataFrame
 import csv
 from sklearn.ensemble import RandomForestRegressor
 from sklearn import preprocessing, linear_model
 import sklearn.metrics as sm
 import matplotlib.pyplot as plt
-import textwrap
-import pylab
 
 # Define dataset loading function
 def data_load(filename):
@@ -17,7 +13,7 @@ def data_load(filename):
     X, y = [], []
     for row in file:
         data.append(row)
-    # data1 = preprocessing.normalize(data[1:], norm='l1')
+    # data1 = preprocessing.normalize(data[1:], norm='l1')???????
     data_scaler = preprocessing.MinMaxScaler(feature_range=(0,10))
     data_scaled = data_scaler.fit_transform(data[1:])
     for row in data_scaled:
@@ -30,9 +26,6 @@ def data_load(filename):
 
 # Input and normalize data
 X, y, feature_names = data_load('winequality-red.csv')
-
-# # Normalize features
-# X = preprocessing.normalize(X, norm='l1')
 
 # Separate training and testing data
 num_training = int(0.7 * len(X))
@@ -62,7 +55,6 @@ def plot_importances(regressor, title, feature_names):
     # importances = 100.0 * (importances/max(importances))
 
     # Summarize feature importance
-    importance_list = []
     for idx1, f in enumerate(feature_names):
         for idx2, i in enumerate(importances):
             if idx1 == idx2:
@@ -101,7 +93,6 @@ def plot_importances(regressor, title, feature_names):
     # plt.xticks(label_position, feature_names[idx_dsc], rotation=60)
     # plt.ylabel('Red Wine Relative Feature Importance')
     # plt.title(title)
-
 
     plt.show()
 
