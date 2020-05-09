@@ -58,10 +58,15 @@ print("R2 score = ", round(sm.r2_score(y_test, y_pred), 3))
 
 # Define feature importances plotting function
 def plot_importances(regressor, title, feature_names):
-    importance = rf_regressor.feature_importances_
+    importances = rf_regressor.feature_importances_
+    # importances = 100.0 * (importances/max(importances))
+
     # Summarize feature importance
-    for i, v in enumerate(importance):
-        print('Feature: %0d, Score: %.5f' % (i, v))
+    importance_list = []
+    for idx1, f in enumerate(feature_names):
+        for idx2, i in enumerate(importances):
+            if idx1 == idx2:
+                print("Feature:", f, "\n|", "Score:", round(i, 5))
 
     # Normalize feature importance
     importances = rf_regressor.feature_importances_
